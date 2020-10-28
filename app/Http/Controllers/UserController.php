@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     // 
-    public function registration(Request $request){
+    public function register(Request $request){
 
         $this->validate($request, [
             'name' => 'required|string|max:255|min:3',
@@ -24,8 +24,10 @@ class UserController extends Controller
 
         $user->save();
 
-        return $user->id;
+        return $user;
     }
 
+
+  
     
 }
