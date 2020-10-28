@@ -21,10 +21,9 @@ class UserController extends Controller
         $user = User::firstOrNew(['id' => $request->input("id")]);
         $request = $request->all();
         $user = extract_field_to_save($user,$request);
-
         $user->save();
-
-        return $user;
+        
+        return response()->json($user);
     }
 
 
